@@ -8,13 +8,12 @@
 }
 
 .cards > ul > li {
-  background-color: var(--background-color);
-  border: 1px solid var(--link-color);
+  border-radius: 6px;
 }
 
 .cards .cards-card-body {
-  margin: 8px;
-  text-align: center;
+  padding: 10px 20px;
+  text-align: left;
 }
 
 .cards .cards-card-image {
@@ -23,12 +22,98 @@
 
 .cards > ul > li img {
   width: 100%;
-  height: 150px;
+  height: 200px;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .cards-wrapper {
-  max-width: 1000px !important;
+  max-width: 1200px !important;
 }
 
+.cards-card-body .select-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+.cards-card-body .select-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.cards-card-body .select-field-container {
+  position: relative;
+  width: 100%;
+}
+
+.cards-card-body .location-select {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.cards-card-body .location-select:focus {
+  outline: none;
+  border-color: #006863;
+  box-shadow: 0 0 0 2px rgba(0, 104, 99, 0.2);
+}
+
+/* Chevron arrow */
+.cards-card-body .select-field-container::after {
+  content: "";
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23006863' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+p.button-container a.button.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+}
+
+/* Hover state */
+p.button-container a.button.link:hover {
+  text-decoration: none;
+  background: transparent;
+}
+
+/* Circular Teal Chevron Badge */
+p.button-container a.button::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--brand-button-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px 14px;
+}
+
+/* Optional hover interaction for the arrow icon */
+p.button-container a.button.link:hover::after {
+  background-color: var(--brand-button-hover);
+}

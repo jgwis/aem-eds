@@ -22,7 +22,11 @@ body[data-brand="retail"] footer ul li a {
   color: #fff6ee;
 }
 
-body[data-brand="retail"] a:any-link {
+/* body[data-brand="retail"] a:any-link {
+  color: #a11d1d;
+} */
+
+body[data-brand="retail"] a.link {
   color: #a11d1d;
 }
 
@@ -49,7 +53,11 @@ body[data-brand="retail"] .weather {
 }
 
 body[data-brand="retail"] .hero {
-  background: linear-gradient(135deg, rgb(217 48 37 / 94%) 0%, rgb(245 158 11 / 90%) 100%);
+  background: linear-gradient(
+    135deg,
+    rgb(217 48 37 / 94%) 0%,
+    rgb(245 158 11 / 90%) 100%
+  );
   border-bottom: 4px solid #f9c47a;
 }
 
@@ -104,4 +112,8 @@ body[data-brand="retail"] .registration-form button:hover {
 body[data-brand="retail"] footer,
 body[data-brand="retail"] footer .footer {
   background: linear-gradient(180deg, #5a120d 0%, #a11d1d 100%);
+}
+
+body[data-brand="retail"] footer .footer-bottom {
+  background: #a11d1d;
 }

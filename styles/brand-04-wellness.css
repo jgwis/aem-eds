@@ -22,7 +22,11 @@ body[data-brand="wellness"] footer ul li a {
   color: #f0fdf4;
 }
 
-body[data-brand="wellness"] a:any-link {
+/* body[data-brand="wellness"] a:any-link {
+  color: #047857;
+} */
+
+body[data-brand="wellness"] a.link {
   color: #047857;
 }
 
@@ -49,7 +53,11 @@ body[data-brand="wellness"] .weather {
 }
 
 body[data-brand="wellness"] .hero {
-  background: linear-gradient(135deg, rgb(16 185 129 / 94%) 0%, rgb(167 139 250 / 90%) 100%);
+  background: linear-gradient(
+    135deg,
+    rgb(16 185 129 / 94%) 0%,
+    rgb(167 139 250 / 90%) 100%
+  );
   border-bottom: 4px solid #86efac;
 }
 
@@ -104,4 +112,8 @@ body[data-brand="wellness"] .registration-form button:hover {
 body[data-brand="wellness"] footer,
 body[data-brand="wellness"] footer .footer {
   background: linear-gradient(180deg, #022c22 0%, #047857 100%);
+}
+
+body[data-brand="wellness"] footer .footer-bottom {
+  background: #047857;
 }

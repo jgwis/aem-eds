@@ -12,7 +12,7 @@
 
 :root {
   /* colors */
-  --background-color: white;
+  --background-color: #ffffff;
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
@@ -21,7 +21,8 @@
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --heading-font-family:
+    roboto-condensed, roboto-condensed-fallback, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -44,13 +45,13 @@
 @font-face {
   font-family: roboto-condensed-fallback;
   size-adjust: 88.82%;
-  src: local('Arial');
+  src: local("Arial");
 }
 
 @font-face {
   font-family: roboto-fallback;
   size-adjust: 99.529%;
-  src: local('Arial');
+  src: local("Arial");
 }
 
 @media (width >= 900px) {
@@ -86,7 +87,6 @@ body.appear {
 
 header {
   height: var(--nav-height);
-  
 }
 
 header .header,
@@ -113,12 +113,24 @@ h6 {
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
 
 p,
 dl,
@@ -217,12 +229,6 @@ main img {
   height: auto;
 }
 
-.icon {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-}
-
 .icon img {
   height: 100%;
   width: 100%;
@@ -234,13 +240,12 @@ main > .section {
 }
 
 main > .section > div {
-  max-width: 1200px;
   margin: auto;
   padding: 0 24px;
 }
 
 main > .section:first-of-type {
-  margin-top: 0;
+  margin-top: 3px;
 }
 
 @media (width >= 900px) {
@@ -262,7 +267,7 @@ h2#savings-account-blogs {
   font-size: 24px;
 }
 
-.discover-wrapper{
+.discover-wrapper {
   text-align: center;
 }
 
@@ -272,9 +277,28 @@ h2#savings-account-blogs {
 
 .cta-wrapper .button-container .button {
   padding: 6px 20px;
-  background: #047DBA;
+  background: #047dba;
   border-radius: 5px;
   font-size: 14px !important;
 }
 
+.access-wrapper {
+  background-color: var(--light-color);
+  margin: 50px 0 !important;
+}
 
+.access-wrapper .access > div {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  gap: 100px;
+}
+
+p {
+  font-size: 13px;
+}
+
+a.button.link {
+  background-color: transparent !important;
+  padding: 0;
+}

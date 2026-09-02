@@ -1,40 +1,106 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
-}
+/* =========================================================
+   CONTAINER & GRID LAYOUT
+   ========================================================= */
 
-footer .footer > div {
-  margin: auto;
+footer .footer-inner {
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
-footer .footer p {
+footer .footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+footer .footer-column {
+  flex: 1 1 150px;
+}
+
+footer .footer-column.footer-brand {
+  flex: 1.5 1 200px;
+}
+
+/* =========================================================
+   TYPOGRAPHY & CONTENT
+   ========================================================= */
+
+footer .footer-column p {
   margin: 0;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
-  }
+footer .footer-column p strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-size: 20px;
 }
 
-footer ul{
-    list-style: none;
-    margin: 0 auto;
-    display: table;
-}
- 
-footer ul li{
-    color: #C7CCD3;
-    display: inline;
-    padding: 0 20px;
-}
- 
-footer ul li a{
-    color: #C7CCD3!important;
+footer .footer-tagline h2 {
+  color: #fff;
+  font-size: 20px;
 }
 
-footer .footer{
-    background:#0A223F;
+footer img.footer-logo-img {
+  width: 141px;
+  height: 40px;
+}
+
+/* =========================================================
+   NAVIGATION & LINKS
+   ========================================================= */
+
+footer .footer-column ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer .footer-column ul li a {
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  text-decoration: none;
+}
+
+.social-icons {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+/* =========================================================
+   FOOTER BOTTOM & LEGAL
+   ========================================================= */
+
+footer .footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 20px;
+  font-size: 0.85rem;
+}
+
+footer .footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer .footer-legal-links a {
+  color: #555;
+  text-decoration: none;
+}
+
+footer p.footer-copyright {
+  margin: 0;
+  color: #afa8a8;
 }

@@ -22,7 +22,11 @@ body[data-brand="finance"] footer ul li a {
   color: #f0fdfa;
 }
 
-body[data-brand="finance"] a:any-link {
+/* body[data-brand="finance"] a:any-link {
+  color: #115e59;
+} */
+
+body[data-brand="finance"] a.link {
   color: #115e59;
 }
 
@@ -49,7 +53,11 @@ body[data-brand="finance"] .weather {
 }
 
 body[data-brand="finance"] .hero {
-  background: linear-gradient(135deg, rgb(15 118 110 / 94%) 0%, rgb(251 191 36 / 90%) 100%);
+  background: linear-gradient(
+    135deg,
+    rgb(15 118 110 / 94%) 0%,
+    rgb(251 191 36 / 90%) 100%
+  );
   border-bottom: 4px solid #5eead4;
 }
 
@@ -104,4 +112,8 @@ body[data-brand="finance"] .registration-form button:hover {
 body[data-brand="finance"] footer,
 body[data-brand="finance"] footer .footer {
   background: linear-gradient(180deg, #042f2e 0%, #115e59 100%);
+}
+
+body[data-brand="finance"] footer .footer-bottom {
+  background: #115e59;
 }

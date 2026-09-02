@@ -22,7 +22,11 @@ body[data-brand="travel"] footer ul li a {
   color: #ecfeff;
 }
 
-body[data-brand="travel"] a:any-link {
+/* body[data-brand="travel"] a:any-link {
+  color: #0369a1;
+} */
+
+body[data-brand="travel"] a.link {
   color: #0369a1;
 }
 
@@ -49,7 +53,11 @@ body[data-brand="travel"] .weather {
 }
 
 body[data-brand="travel"] .hero {
-  background: linear-gradient(135deg, rgb(14 165 233 / 94%) 0%, rgb(59 130 246 / 88%) 100%);
+  background: linear-gradient(
+    135deg,
+    rgb(14 165 233 / 94%) 0%,
+    rgb(59 130 246 / 88%) 100%
+  );
   border-bottom: 4px solid #7dd3fc;
 }
 
@@ -104,4 +112,8 @@ body[data-brand="travel"] .registration-form button:hover {
 body[data-brand="travel"] footer,
 body[data-brand="travel"] footer .footer {
   background: linear-gradient(180deg, #082f49 0%, #0f766e 100%);
+}
+
+body[data-brand="travel"] footer .footer-bottom {
+  background: #0f766e;
 }

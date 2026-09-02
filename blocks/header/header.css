@@ -38,6 +38,10 @@ header nav a:any-link {
   color: currentcolor;
 }
 
+header nav .dropdown-arrow img {
+  width: 15px;
+}
+
 /* =========================================================
    HAMBURGER
    ========================================================= */
@@ -115,12 +119,9 @@ header nav[aria-expanded="true"] .nav-hamburger-icon::after {
   transform: rotate(-45deg);
 }
 
-@media (width >= 900px) {
-  header nav .nav-hamburger {
-    display: none;
-    visibility: hidden;
-  }
-}
+/* =========================================================
+   BRAND & NAVIGATION LIST
+   ========================================================= */
 
 header .nav-brand {
   grid-area: brand;
@@ -164,8 +165,7 @@ header nav .nav-list {
   display: flex;
   align-items: center;
   gap: 40px;
-  margin: 0;
-  margin-left: 170px;
+  margin: 0 0 0 170px;
   padding: 0;
   list-style: none;
 }
@@ -194,10 +194,10 @@ header nav .nav-list > .nav-item > a {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   padding: 20px 0;
   color: var(--text-color);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   text-decoration: none;
 }
@@ -210,22 +210,30 @@ header nav .dropdown-arrow {
   display: inline-block;
   font-size: 10px;
   line-height: 1;
-  transition: transform 0.2s ease;
+  transition: transform 0.4s ease;
+}
+
+header nav .dropdown-arrow svg {
+  width: 15px;
+  margin-top: 1px;
 }
 
 header nav .nav-item.has-dropdown[aria-expanded="true"] .dropdown-arrow {
   transform: rotate(180deg);
 }
 
+/* =========================================================
+   MEGA MENU BASE
+   ========================================================= */
+
 header nav .mega-menu {
   display: flex;
   gap: 30px;
   position: fixed;
-  top: var(--nav-height);
+  top: calc(var(--nav-height) + 2px);
   left: 0;
   width: 100vw;
   max-width: 100vw;
-
   box-sizing: border-box;
   background: var(--background-color);
   box-shadow: 0 8px 20px rgb(0 0 0 / 12%);
@@ -267,31 +275,140 @@ header nav .mega-menu picture img {
 }
 
 /* =========================================================
-   MEGA MENU TABLE / RESOURCES
+   MEGA MENU LAYOUT & CONTENT
    ========================================================= */
 
-header nav .mega-menu table {
+header nav .mega-menu-inner {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-areas: "left right";
   width: 100%;
-  margin-top: 20px;
-  border-collapse: collapse;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-header nav .mega-menu td {
-  padding: 8px 12px 8px 0;
-  border: 0;
+header nav .mega-menu-inner.reverse-layout {
+  grid-template-columns: 65% 35%;
+  grid-template-areas: "right left";
 }
 
-header nav .mega-menu tr:first-child {
+header nav .mega-menu-left {
+  grid-area: left;
+}
+
+header nav .mega-menu-left > div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+header nav .mega-menu-left picture,
+header nav .mega-menu-left picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+header nav .mega-menu-left p {
+  margin: 0;
+}
+
+/* Featured Header Tag (Top Overlay) */
+header nav .mega-menu-left p:nth-of-type(2) {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Main Highlight Text (Bottom Overlay) */
+header nav .mega-menu-left p:nth-of-type(3) {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 2;
+  color: #fff;
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+header nav .mega-menu-left p:nth-of-type(4),
+header nav .reverse-layout .mega-menu-left p:nth-of-type(4) {
   display: none;
 }
 
-header nav .mega-menu tr:nth-child(2) td {
-  padding-top: 0;
+header nav .mega-menu-left > div::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  pointer-events: none;
+}
+
+/* Mega Menu Right Section & Columns */
+header nav .mega-menu-right,
+header nav .mega-menu-inner.reverse-layout .mega-menu-right {
+  grid-area: right;
+  padding: 20px 30px;
+}
+
+.mega-menu-main-section {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+header nav .mega-menu-links-section {
+  margin-bottom: 28px;
+}
+
+header nav .mega-menu-title {
+  margin: 0 0 12px;
+  font-size: 15px;
   font-weight: 700;
 }
 
+header nav .mega-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+header nav .mega-menu-links a {
+  display: block;
+  padding: 4px 0;
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+header nav .mega-menu-links a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.mega-menu .button-container a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 0 !important;
+  background-color: transparent !important;
+  cursor: pointer;
+}
+
+/* Hidden table element */
+header nav .mega-menu table {
+  display: none;
+}
+
 /* =========================================================
-   TOOLS
+   TOOLS & USER MENU
    ========================================================= */
 
 header nav .nav-tools {
@@ -304,10 +421,6 @@ header nav .nav-tools {
 button.signin-btn {
   padding: 10px 20px;
 }
-
-/* =========================================================
-   USER MENU
-   ========================================================= */
 
 .nav-user {
   position: relative;
@@ -348,17 +461,12 @@ button.signin-btn {
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
-
   display: none;
-
   min-width: 170px;
   padding: 8px;
-
   border: 1px solid #f0f0f0;
   border-radius: 12px;
-
   background-color: #fff;
-
   box-shadow:
     0 10px 25px rgb(0 0 0 / 8%),
     0 4px 12px rgb(0 0 0 / 4%);
@@ -371,27 +479,19 @@ button.signin-btn {
 .user-dropdown a,
 .user-dropdown .logout-btn {
   box-sizing: border-box;
-
   display: flex;
   align-items: center;
   width: 100%;
-
   padding: 10px 14px;
-
   border: 0;
   border-radius: 8px;
-
   background: none;
-
   color: #333;
   cursor: pointer;
-
   font-size: 14px;
   font-weight: 500;
-
   text-align: left;
   text-decoration: none;
-
   transition:
     background-color 0.2s ease,
     color 0.2s ease;
@@ -405,10 +505,8 @@ button.signin-btn {
 .user-dropdown .logout-btn {
   margin-top: 8px;
   padding-top: 12px;
-
   border-top: 1px solid #f0f0f0;
   border-radius: 0 0 8px 8px;
-
   color: #df2c2c;
 }
 
@@ -424,7 +522,7 @@ button.signin-btn {
 }
 
 /* =========================================================
-   FORM
+   FORM CONTROLS
    ========================================================= */
 
 .form-group input:focus {
@@ -439,10 +537,16 @@ button.signin-btn {
 }
 
 /* =========================================================
-   DESKTOP
+   MEDIA QUERIES
    ========================================================= */
 
+/* Desktop Breakpoint */
 @media (width >= 900px) {
+  header nav .nav-hamburger {
+    display: none;
+    visibility: hidden;
+  }
+
   header nav {
     display: flex;
     justify-content: space-between;
@@ -467,10 +571,7 @@ button.signin-btn {
   }
 }
 
-/* =========================================================
-   MOBILE / TABLET
-   ========================================================= */
-
+/* Mobile & Tablet Breakpoint */
 @media (width < 900px) {
   header nav .nav-list {
     display: block;
@@ -487,18 +588,13 @@ button.signin-btn {
 
   header nav .mega-menu {
     position: static;
-
     width: 100%;
     max-width: none;
-
     padding: 20px;
-
     box-shadow: none;
-
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-
     transform: none;
   }
 
@@ -513,187 +609,4 @@ button.signin-btn {
   .menu-wrapper .menu {
     display: block;
   }
-}
-
-.mega-menu-left > div {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.mega-menu-left picture {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.mega-menu-left picture img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-/* Remove default paragraph spacing */
-.mega-menu-left p {
-  margin: 0;
-}
-
-/* Featured - top */
-.mega-menu-left p:nth-of-type(2) {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  z-index: 2;
-
-  color: #fff;
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-/* Genmab at a Glance - bottom */
-.mega-menu-left p:nth-of-type(3) {
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
-  z-index: 2;
-
-  color: #fff;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 1.2;
-}
-
-.mega-menu-right {
-  padding: 20px 30px;
-}
-
-.mega-menu-links a {
-  display: block;
-  padding: 5px 0;
-}
-
-header nav .mega-menu-inner {
-  display: grid;
-  grid-template-columns: 35% 65%;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-header nav .mega-menu-left {
-  position: relative;
-  height: 350px;
-  min-height: 350px;
-
-  overflow: hidden;
-}
-
-/* Featured */
-
-header nav .mega-menu-left p:nth-of-type(2) {
-  position: absolute;
-
-  top: 24px;
-  left: 24px;
-
-  z-index: 2;
-
-  margin: 0;
-
-  color: #fff;
-
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* Genmab at a Glance */
-
-header nav .mega-menu-left p:nth-of-type(3) {
-  position: absolute;
-
-  bottom: 24px;
-  left: 24px;
-
-  z-index: 2;
-
-  margin: 0;
-
-  color: #fff;
-
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-/* Image overlay */
-
-header nav .mega-menu-left > div::after {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 1;
-
-  content: "";
-
-  background: linear-gradient(
-    to bottom,
-    rgb(0 0 0 / 30%) 0%,
-    rgb(0 0 0 / 0%) 45%,
-    rgb(0 0 0 / 50%) 100%
-  );
-
-  pointer-events: none;
-}
-
-header nav .mega-menu-title {
-  margin: 0 0 12px;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-header nav .mega-menu-links-section {
-  margin-bottom: 28px;
-}
-
-header nav .mega-menu-links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-header nav .mega-menu-links a {
-  display: block;
-  padding: 4px 0;
-  color: var(--text-color);
-  font-size: 14px;
-  font-weight: 400;
-  text-decoration: none;
-}
-
-header nav .mega-menu-links a:hover {
-  color: var(--link-hover-color);
-  text-decoration: underline;
-}
-
-/* =========================================================
-   HIDE ORIGINAL TABLE
-   ========================================================= */
-
-header nav .mega-menu table {
-  display: none;
-}
-
-.mega-menu-main-section {
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-}
-
-.mega-menu .button-container a {
-  background-color: transparent !important;
-  padding: 5px 0 !important;
-  margin: 0 !important;
-  cursor: pointer;
 }

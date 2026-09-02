@@ -22,7 +22,11 @@ body[data-brand="luxury"] footer ul li a {
   color: #f8f4ff;
 }
 
-body[data-brand="luxury"] a:any-link {
+/* body[data-brand="luxury"] a:any-link {
+  color: #5b21b6;
+} */
+
+body[data-brand="luxury"] a.link {
   color: #5b21b6;
 }
 
@@ -49,7 +53,11 @@ body[data-brand="luxury"] .weather {
 }
 
 body[data-brand="luxury"] .hero {
-  background: linear-gradient(135deg, rgb(109 40 217 / 94%) 0%, rgb(168 85 247 / 90%) 100%);
+  background: linear-gradient(
+    135deg,
+    rgb(109 40 217 / 94%) 0%,
+    rgb(168 85 247 / 90%) 100%
+  );
   border-bottom: 4px solid #d8b4fe;
 }
 
@@ -104,4 +112,8 @@ body[data-brand="luxury"] .registration-form button:hover {
 body[data-brand="luxury"] footer,
 body[data-brand="luxury"] footer .footer {
   background: linear-gradient(180deg, #2b1745 0%, #4c1d95 100%);
+}
+
+body[data-brand="luxury"] footer .footer-bottom {
+  background: #4c1d95;
 }
