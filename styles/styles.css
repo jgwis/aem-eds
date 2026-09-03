@@ -1,17 +1,8 @@
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
-
+/* ==========================================================================
+   1. GLOBAL DESIGN TOKENS & BASE VARIABLES
+   ========================================================================== */
 :root {
-  /* colors */
+  /* Default Fallback Colors */
   --background-color: #ffffff;
   --light-color: #f8f8f8;
   --dark-color: #505050;
@@ -19,17 +10,17 @@
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
 
-  /* fonts */
+  /* Typography */
   --body-font-family: roboto, roboto-fallback, sans-serif;
   --heading-font-family:
     roboto-condensed, roboto-condensed-fallback, sans-serif;
 
-  /* body sizes */
+  /* Body Font Sizes (Mobile Base) */
   --body-font-size-m: 22px;
   --body-font-size-s: 19px;
   --body-font-size-xs: 17px;
 
-  /* heading sizes */
+  /* Heading Sizes (Mobile Base) */
   --heading-font-size-xxl: 55px;
   --heading-font-size-xl: 44px;
   --heading-font-size-l: 34px;
@@ -37,11 +28,27 @@
   --heading-font-size-s: 24px;
   --heading-font-size-xs: 22px;
 
-  /* nav height */
+  /* Navigation Layout */
   --nav-height: 64px;
 }
 
-/* fallback fonts */
+@media (width >= 900px) {
+  :root {
+    /* Desktop Font Sizes */
+    --body-font-size-m: 15px;
+    --body-font-size-s: 14px;
+    --body-font-size-xs: 12px;
+
+    --heading-font-size-xxl: 45px;
+    --heading-font-size-xl: 36px;
+    --heading-font-size-l: 28px;
+    --heading-font-size-m: 22px;
+    --heading-font-size-s: 20px;
+    --heading-font-size-xs: 18px;
+  }
+}
+
+/* Fallback Font Definitions */
 @font-face {
   font-family: roboto-condensed-fallback;
   size-adjust: 88.82%;
@@ -54,28 +61,14 @@
   src: local("Arial");
 }
 
-@media (width >= 900px) {
-  :root {
-    /* body sizes */
-    --body-font-size-m: 15px;
-    --body-font-size-s: 14px;
-    --body-font-size-xs: 12px;
-
-    /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
-    --heading-font-size-l: 28px;
-    --heading-font-size-m: 22px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
-  }
-}
-
+/* ==========================================================================
+   2. BASE & TYPOGRAPHY STYLES
+   ========================================================================== */
 body {
   display: none;
   margin: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background: var(--brand-bg-main, var(--background-color));
+  color: var(--brand-text, var(--text-color));
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
@@ -83,20 +76,6 @@ body {
 
 body.appear {
   display: block;
-}
-
-header {
-  height: var(--nav-height);
-}
-
-header .header,
-footer .footer {
-  visibility: hidden;
-}
-
-header .header[data-block-status="loaded"],
-footer .footer[data-block-status="loaded"] {
-  visibility: visible;
 }
 
 h1,
@@ -142,6 +121,10 @@ blockquote {
   margin-bottom: 0.25em;
 }
 
+p {
+  font-size: 13px;
+}
+
 code,
 pre {
   font-size: var(--body-font-size-s);
@@ -155,72 +138,11 @@ pre {
   white-space: pre;
 }
 
-main > div {
-  margin: 40px 16px;
-}
-
 input,
 textarea,
 select,
 button {
   font: inherit;
-}
-
-/* links */
-a:any-link {
-  color: var(--link-color);
-  text-decoration: none;
-  word-break: break-word;
-}
-
-a:hover {
-  color: var(--link-hover-color);
-  text-decoration: underline;
-}
-
-/* buttons */
-a.button:any-link,
-button {
-  box-sizing: border-box;
-  display: inline-block;
-  max-width: 100%;
-  margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font-family: var(--body-font-family);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.25;
-  text-align: center;
-  text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
-  cursor: pointer;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-a.button:hover,
-a.button:focus,
-button:hover,
-button:focus {
-  background-color: var(--link-hover-color);
-  cursor: pointer;
-}
-
-button:disabled,
-button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
-}
-
-a.button.secondary,
-button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
 }
 
 main img {
@@ -234,43 +156,103 @@ main img {
   width: 100%;
 }
 
-/* sections */
-main > .section {
-  margin: 40px 0;
+/* ==========================================================================
+   3. UNIVERSAL LINKS & BUTTONS
+   ========================================================================== */
+a:any-link {
+  color: var(--brand-link, var(--link-color));
+  text-decoration: none;
+  word-break: break-word;
 }
 
-main > .section > div {
-  margin: auto;
-  padding: 0 24px;
+a:hover {
+  color: var(--brand-button-hover, var(--link-hover-color));
+  text-decoration: underline;
+}
+
+a.link {
+  color: var(--brand-link, var(--link-color));
+}
+
+a.button.link {
+  background-color: transparent !important;
+  padding: 0;
+}
+
+a.button:any-link,
+button,
+.registration-form button,
+.article .button-container .button {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  margin: 12px 0;
+  border: 2px solid transparent;
+  border-radius: 2.4em;
+  padding: 0.5em 1.2em;
+  font-family: var(--body-font-family);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--brand-button-bg, var(--link-color));
+  color: var(--brand-text-white, var(--background-color));
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: background-color 0.2s ease-in-out;
+}
+
+a.button:hover,
+a.button:focus,
+button:hover,
+button:focus,
+.registration-form button:hover,
+.article .button-container .button:hover {
+  background-color: var(--brand-button-hover, var(--link-hover-color));
+  cursor: pointer;
+}
+
+button:disabled,
+button:disabled:hover {
+  background-color: var(--light-color);
+  cursor: unset;
+}
+
+a.button.secondary,
+button.secondary {
+  background-color: unset;
+  border: 2px solid currentcolor;
+  color: var(--brand-text, var(--text-color));
+}
+
+/* ==========================================================================
+   4. LAYOUT, SECTIONS & CONTAINER WRAPPERS
+   ========================================================================== */
+main > div {
+  padding: 30px;
 }
 
 main > .section:first-of-type {
   margin-top: 3px;
 }
 
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
-  }
+.section .cards-wrapper {
+  max-width: 1200px !important;
+  margin: 0 auto;
 }
 
-/* section metadata */
 main .section.light,
-main .section.highlight {
+main .section.highlight,
+.section.access-container {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
 }
 
-h2#savings-account-blogs {
-  text-align: center;
-  font-size: 24px;
-}
-
-.discover-wrapper {
-  text-align: center;
-}
-
+.discover-wrapper,
 .cta-wrapper {
   text-align: center;
 }
@@ -283,22 +265,137 @@ h2#savings-account-blogs {
 }
 
 .access-wrapper {
-  background-color: var(--light-color);
-  margin: 50px 0 !important;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .access-wrapper .access > div {
   display: flex;
   align-items: center;
-  padding: 50px;
   gap: 100px;
 }
 
-p {
-  font-size: 13px;
+/* Custom Featured Curved Section */
+.section.featured-section {
+  --background: var(--brand-surface, var(--light-color));
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  position: relative;
 }
 
-a.button.link {
-  background-color: transparent !important;
-  padding: 0;
+.section.featured-section::after {
+  content: "";
+  background: var(--brand-surface, var(--light-color));
+  border-radius: 50%;
+  display: block;
+  height: 1000vw;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: 1000vw;
+}
+
+.featured-section .cards-wrapper {
+  position: relative;
+  z-index: 9;
+}
+
+/* ==========================================================================
+   5. COMPONENT MODULES & CARDS
+   ========================================================================== */
+.cards > ul > li,
+.card1 > ul > li,
+.whoweare > ul > li,
+.teaser > ul > li,
+.article.block,
+.registration-form,
+.weather {
+  background: var(--brand-surface, var(--background-color));
+  border: 1px solid var(--brand-accent, transparent);
+  box-shadow: var(--brand-card-shadow, none);
+}
+
+h2#savings-account-blogs {
+  text-align: center;
+  font-size: 24px;
+}
+
+/* ==========================================================================
+   6. HEADER & NAVIGATION BLOCK
+   ========================================================================== */
+header {
+  height: var(--nav-height);
+}
+
+header .header {
+  visibility: hidden;
+}
+
+header .header[data-block-status="loaded"] {
+  visibility: visible;
+}
+
+header .nav-wrapper {
+  background: var(--brand-bg-white, #ffffff);
+  border-bottom: 3px solid var(--brand-button-bg, transparent);
+}
+
+header nav .nav-brand a:any-link,
+header nav .nav-sections a:any-link {
+  color: var(--brand-link, var(--link-color));
+}
+
+header nav .nav-brand a:hover,
+header nav .nav-sections a:hover {
+  color: var(--brand-button-hover, var(--link-hover-color));
+}
+
+header nav .nav-hamburger button {
+  background: var(--brand-surface, var(--light-color));
+  color: var(--brand-button-hover, var(--text-color));
+}
+
+/* ==========================================================================
+   7. HERO BLOCK
+   ========================================================================== */
+.hero {
+  background: var(--brand-hero-bg, var(--light-color));
+  border-bottom: 4px solid var(--brand-accent, transparent);
+}
+
+.hero h1 {
+  color: var(--brand-text-white, #ffffff);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.hero .button-container .button:hover {
+  background: var(--brand-surface, #ffffff);
+  color: var(--brand-button-hover, var(--link-hover-color));
+}
+
+/* ==========================================================================
+   8. FOOTER BLOCK
+   ========================================================================== */
+footer .footer {
+  visibility: hidden;
+}
+
+footer .footer[data-block-status="loaded"] {
+  visibility: visible;
+}
+
+footer,
+footer .footer {
+  background: var(--brand-footer-bg, var(--dark-color));
+}
+
+footer ul li,
+footer ul li a {
+  color: var(--brand-footer-text, var(--background-color));
+}
+
+footer .footer-bottom {
+  background: var(--brand-link, var(--dark-color));
 }

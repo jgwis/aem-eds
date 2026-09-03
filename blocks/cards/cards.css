@@ -28,10 +28,6 @@
   border-radius: 5px;
 }
 
-.cards-wrapper {
-  max-width: 1200px !important;
-}
-
 .cards-card-body .select-wrapper {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,121 @@
+/* ==========================================================================
+   BRAND VARIABLE THEMES
+   ========================================================================== */
+
+/* 1. LUXURY BRAND */
+body[data-brand="luxury"] {
+  --brand-bg-main: linear-gradient(180deg, #ffffff 0%, #f8f4ff 100%);
+  --brand-bg-white: #ffffff;
+  --brand-primary: #6d28d9;
+  --brand-primary-dark: #3b1d72;
+  --brand-accent: #d4af37;
+  --brand-surface: #f8f4ff;
+  --brand-text: #1f2937;
+  --brand-text-white: #ffffff;
+  --brand-link: #5b21b6;
+  --brand-button-bg: #6d28d9;
+  --brand-button-hover: #4c1d95;
+  --brand-card-shadow: 0 10px 24px rgb(217 48 37 / 12%);
+  --brand-hero-bg: linear-gradient(
+    135deg,
+    rgb(217 48 37 / 94%) 0%,
+    rgb(245 158 11 / 90%) 100%
+  );
+  --brand-footer-bg: linear-gradient(180deg, #3b1d72 0%, #5b21b6 100%);
+  --brand-footer-text: var(--brand-surface);
+}
+
+/* 2. RETAIL BRAND */
+body[data-brand="retail"] {
+  --brand-bg-main: #ffffff;
+  --brand-bg-white: #ffffff;
+  --brand-primary: #d93025;
+  --brand-primary-dark: #6e1309;
+  --brand-accent: #f59e0b;
+  --brand-surface: #fff6ee;
+  --brand-text: #1f2937;
+  --brand-text-white: #ffffff;
+  --brand-link: #a11d1d;
+  --brand-button-bg: #d93025;
+  --brand-button-hover: #8b1e13;
+  --brand-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --brand-hero-bg: #ff4500;
+  --brand-footer-bg: #111111;
+  --brand-footer-text: #ffffff;
+}
+
+/* 3. DIGITAL BRAND */
+body[data-brand="digital"] {
+  --brand-bg-main: #0f172a;
+  --brand-bg-white: #ffffff;
+  --brand-primary: #0f4c81;
+  --brand-primary-dark: #0a2540;
+  --brand-accent: #2dd4bf;
+  --brand-surface: #eef7ff;
+  --brand-text: #111827;
+  --brand-text-white: #ffffff;
+  --brand-link: #0f4c81;
+  --brand-button-bg: #0f4c81;
+  --brand-button-hover: #0a2540;
+  --brand-card-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  --brand-hero-bg: linear-gradient(135deg, #0284c7 0%, #0f172a 100%);
+  --brand-footer-bg: #0284c7;
+  --brand-footer-text: #ffffff;
+}
+
+/* 4. FINANCE BRAND */
+body[data-brand="finance"] {
+  --brand-bg-main: #0f172a;
+  --brand-bg-white: #ffffff;
+  --brand-primary: #0f766e;
+  --brand-primary-dark: #134e4a;
+  --brand-accent: #fbbf24;
+  --brand-surface: #f0fdfa;
+  --brand-text: #1f2937;
+  --brand-text-white: #ffffff;
+  --brand-link: #115e59;
+  --brand-button-bg: #0f766e;
+  --brand-button-hover: #134e4a;
+  --brand-card-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  --brand-hero-bg: linear-gradient(135deg, #0284c7 0%, #0f172a 100%);
+  --brand-footer-bg: #0284c7;
+  --brand-footer-text: #ffffff;
+}
+
+/* 5. WELLNESS BRAND */
+body[data-brand="wellness"] {
+  --brand-bg-main: #0f172a;
+  --brand-bg-white: #ffffff;
+  --brand-primary: #10b981;
+  --brand-primary-dark: #047857;
+  --brand-accent: #a78bfa;
+  --brand-surface: #f0fdf4;
+  --brand-text: #1f2937;
+  --brand-text-white: #ffffff;
+  --brand-link: #047857;
+  --brand-button-bg: #10b981;
+  --brand-button-hover: #047857;
+  --brand-card-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  --brand-hero-bg: linear-gradient(135deg, #0284c7 0%, #0f172a 100%);
+  --brand-footer-bg: #0284c7;
+  --brand-footer-text: #ffffff;
+}
+
+/* 6. TRAVEL BRAND */
+body[data-brand="wellness"] {
+  --brand-bg-main: #0f172a;
+  --brand-bg-white: #ffffff;
+  --brand-primary: #0ea5e9;
+  --brand-primary-dark: #075985;
+  --brand-accent: #fbbf24;
+  --brand-surface: #ecfeff;
+  --brand-text: #0f172a;
+  --brand-text-white: #ffffff;
+  --brand-link: #0369a1;
+  --brand-button-bg: #0ea5e9;
+  --brand-button-hover: #075985;
+  --brand-card-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  --brand-hero-bg: linear-gradient(135deg, #0284c7 0%, #0f172a 100%);
+  --brand-footer-bg: #0284c7;
+  --brand-footer-text: #ffffff;
+}

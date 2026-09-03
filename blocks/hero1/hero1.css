@@ -1,0 +1,78 @@
+.hero1-container {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.section.hero1-container .hero1-wrapper {
+  padding: 0;
+}
+
+.hero1.block > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 450px;
+  align-items: stretch;
+}
+
+/* Left Content Column */
+.hero1.block .hero1-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rem 3rem 3rem 4rem;
+  color: #ffffff;
+}
+
+.hero1.block .hero1-content h1 {
+  color: #ffffff;
+  font-size: 2.75rem;
+  line-height: 1.15;
+  font-weight: 400;
+  margin: 0;
+  max-width: 540px;
+}
+
+.hero1.block .hero1-content p {
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin: 2rem 0 0;
+  opacity: 0.95;
+}
+
+/* Right Image Column */
+.hero1.block .hero1-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero1.block .hero1-image picture,
+.hero1.block .hero1-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 900px) {
+  .hero1.block > div {
+    grid-template-columns: 1fr;
+  }
+
+  .hero1.block .hero1-content {
+    padding: 2.5rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .hero1.block .hero1-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero1.block .hero1-image {
+    min-height: 300px;
+  }
+}
