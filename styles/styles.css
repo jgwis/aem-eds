@@ -67,6 +67,10 @@ p {
   font-size: 13px;
 }
 
+p {
+  font-size: 13px;
+}
+
 code,
 pre {
   font-size: var(--body-font-size-s);
