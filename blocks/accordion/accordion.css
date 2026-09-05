@@ -1,0 +1,86 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accordion details {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--background-color, #ffffff);
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.accordion details:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+}
+
+.accordion details[open] {
+  border-color: var(--primary-color, #3b82f6);
+  box-shadow: 0 4px 12px -2px rgb(0 0 0 / 0.05);
+}
+
+.accordion details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.accordion details summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion details summary:hover {
+  background-color: var(--light-color, #f8fafc);
+}
+
+.accordion details summary:focus-visible {
+  outline: 2px solid var(--primary-color, #3b82f6);
+  outline-offset: -2px;
+}
+
+.accordion details[open] summary {
+  background-color: var(--light-color, #f8fafc);
+}
+
+.accordion details summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion details summary::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.accordion details[open] summary::after {
+  transform: rotate(-135deg);
+}
+
+.accordion .accordion-item-body {
+  padding: 16px 20px 20px 20px;
+  color: #334155;
+  line-height: 1.6;
+  border-top: 1px solid #e2e8f0;
+}
+
+.accordion .accordion-item-body p:last-child {
+  margin-bottom: 0;
+}

@@ -2,6 +2,12 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
 
+  const isFeaturedGrid = block.closest('.featured-grid');
+  const cardsSection = block.closest('.cards-container');
+  if (isFeaturedGrid) {
+    cardsSection.classList.add('featured-section');
+  }
+
   /* change to ul, li */
   const ul = document.createElement('ul');
   [...block.children].forEach((row) => {

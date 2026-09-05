@@ -1,43 +1,45 @@
 :root {
+  --brand-bg-white: #ffffff;
   --brand-primary: #0f766e;
   --brand-primary-dark: #134e4a;
   --brand-accent: #fbbf24;
   --brand-surface: #f0fdfa;
   --brand-text: #1f2937;
+  --brand-text-white: #ffffff;
   --brand-link: #115e59;
   --brand-button-bg: #0f766e;
   --brand-button-hover: #134e4a;
 }
 
 body[data-brand="finance"] {
-  background: linear-gradient(180deg, #fff 0%, #f0fdfa 100%);
-  color: #1f2937;
+  background: linear-gradient(
+    180deg,
+    var(--brand-bg-white) 0%,
+    var(--brand-surface) 100%
+  );
+  color: var(--brand-text);
 }
 
 body[data-brand="finance"] footer ul li {
-  color: #f0fdfa;
+  color: var(--brand-surface);
 }
 
 body[data-brand="finance"] footer ul li a {
-  color: #f0fdfa;
+  color: var(--brand-surface);
 }
 
-/* body[data-brand="finance"] a:any-link {
-  color: #115e59;
-} */
-
 body[data-brand="finance"] a.link {
-  color: #115e59;
+  color: var(--brand-link);
 }
 
 body[data-brand="finance"] a.button:any-link,
 body[data-brand="finance"] button {
-  background-color: #0f766e;
+  background-color: var(--brand-button-bg);
 }
 
 body[data-brand="finance"] a.button:any-link:hover,
 body[data-brand="finance"] button:hover {
-  background-color: #134e4a;
+  background-color: var(--brand-button-hover);
 }
 
 body[data-brand="finance"] .cards > ul > li,
@@ -47,73 +49,77 @@ body[data-brand="finance"] .teaser > ul > li,
 body[data-brand="finance"] .article.block,
 body[data-brand="finance"] .registration-form,
 body[data-brand="finance"] .weather {
-  background: #f0fdfa;
-  border-color: #5eead4;
-  box-shadow: 0 10px 24px rgb(15 118 110 / 12%);
+  background: var(--brand-surface);
+  border-color: var(--brand-accent);
+  box-shadow: 0 10px 24px rgb(217 48 37 / 12%);
 }
 
 body[data-brand="finance"] .hero {
   background: linear-gradient(
     135deg,
-    rgb(15 118 110 / 94%) 0%,
-    rgb(251 191 36 / 90%) 100%
+    rgb(217 48 37 / 94%) 0%,
+    rgb(245 158 11 / 90%) 100%
   );
-  border-bottom: 4px solid #5eead4;
+  border-bottom: 4px solid var(--brand-accent);
 }
 
 body[data-brand="finance"] .hero h1 {
-  color: #fff;
+  color: var(--brand-text-white);
   text-shadow: 0 2px 8px rgb(17 24 39 / 45%);
 }
 
-body[data-brand="finance"] .hero .button-container .button {
-  background: #fff;
-  color: #134e4a;
-}
-
 body[data-brand="finance"] .article .button-container .button {
-  background: #0f766e;
+  background: var(--brand-button-bg);
 }
 
 body[data-brand="finance"] .hero .button-container .button:hover {
-  background: #f0fdfa;
-  color: #134e4a;
+  background: var(--brand-surface);
+  color: var(--brand-button-hover);
 }
 
 body[data-brand="finance"] .weather-card {
-  background: linear-gradient(135deg, #0f766e 0%, #fbbf24 100%);
-  color: #fff;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, #f59e0b 100%);
+  color: var(--brand-text-white);
 }
 
 body[data-brand="finance"] header .nav-wrapper {
-  background: #fff;
-  border-bottom: 3px solid #0f766e;
+  background: var(--brand-bg-white);
+  border-bottom: 3px solid var(--brand-button-bg);
 }
 
 body[data-brand="finance"] .registration-form button {
-  background: #0f766e;
+  background: var(--brand-button-bg);
 }
 
 body[data-brand="finance"] header nav .nav-hamburger button {
-  background: #f0fdfa;
-  color: #134e4a;
+  background: var(--brand-surface);
+  color: var(--brand-button-hover);
 }
 
 body[data-brand="finance"] header nav .nav-brand a:any-link,
 body[data-brand="finance"] header nav .nav-sections a:any-link {
-  color: #134e4a;
+  color: var(--brand-link);
+}
+
+body[data-brand="finance"] header nav .nav-brand a:hover,
+body[data-brand="finance"] header nav .nav-sections a:hover {
+  color: var(--brand-button-hover);
 }
 
 body[data-brand="finance"] .article .button-container .button:hover,
 body[data-brand="finance"] .registration-form button:hover {
-  background: #134e4a;
+  background: var(--brand-button-hover);
 }
 
 body[data-brand="finance"] footer,
 body[data-brand="finance"] footer .footer {
-  background: linear-gradient(180deg, #042f2e 0%, #115e59 100%);
+  background: linear-gradient(
+    180deg,
+    var(--brand-primary-dark) 0%,
+    var(--brand-link) 100%
+  );
 }
 
 body[data-brand="finance"] footer .footer-bottom {
-  background: #115e59;
+  background: var(--brand-link);
 }
